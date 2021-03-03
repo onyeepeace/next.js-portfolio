@@ -10,13 +10,19 @@
   width: 100vw;
   height: 100vh;
   -webkit-overflow-scrolling: touch;
-  overflow: scroll hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  overflow: auto hidden;
+  /* -ms-overflow-style: none; */
+  scrollbar-width: thin;
 }
 
-.scroll_parent::-webkit-scrollbar { 
-  display: none;
+.scroll_parent::-webkit-scrollbar {
+  scrollbar-width: thin;
+  /* display: none; */
+  height: 4px;
+}
+
+.scroll_parent::-webkit-scrollbar-button {
+  height: 14px;
 }
 
 .scroller {
@@ -28,7 +34,6 @@
 }
 
 .scroll_card {
-  pointer-events: none;
   flex: 0 0 auto;
   width: 100vw;
   height: 100vh;
@@ -36,4 +41,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  mix-blend-mode: difference;
+}
+
+.about_only {
+  background-color: #000;
+}
+
+.about_content {
+  background-color: #fff;
+}
+
+.project_only {
+  background-color: #000;
+}
+
+.project_one {
+  background-color: #fff;
+}
+
+.project_two {
+  background-color: #000;
+}
+
+.contact {
+  background-color: #fff;
 }
