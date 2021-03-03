@@ -1,8 +1,29 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+
+    useEffect(() => {
+        var item = document.getElementsByTagName('main')[0];
+
+        (function () {
+            function scrollHorizontally(e) {
+                e = window.event || e;
+                var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+                item.scrollLeft -= (delta * 40);
+                e.preventDefault();
+            }
+            if (item.addEventListener) {
+                item.addEventListener('mousewheel', scrollHorizontally, false);
+                item.addEventListener('DOMMouseScroll', scrollHorizontally, false);
+            } else {
+                item.attachEvent('onmousewheel', scrollHorizontally);
+            }
+        })();
+    }, [])
+
     return (
         <div className={styles.container}>
             <Head>
@@ -10,49 +31,25 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
-                <section className={styles.hero}>
-                    <div className={styles.top}>
-                        <Link href="/about">
-                            <a className={styles.about}>
-                                About Me
-                            </a>
-                        </Link>
-                        <div className="introduction">
-                            <h1 className={styles.name}>Onyee</h1>
-                            <h1 className={styles.name}>Peace</h1>
-                            <div className={styles.bio}>
-                                <p className={styles.info}>JavaScript Frontend Developer</p>
-                                <p className={styles.info}>Baker</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.bottom}>
-                        <div className={styles.social}>
-                            <a href="http://twitter.com/onyeepeace" className={styles.socialLink} target="_blank" rel="noopener noreferrer">Twitter</a>
-                            <a href="http://github.com/onyeepeace" className={styles.socialLink} target="_blank" rel="noopener noreferrer">Github</a>
-                            <a href="http://linkedin.com/in/onyeepeace" className={styles.socialLink} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        </div>
-                        <div className={styles.scroll}>
-                            <p className={styles.scroll_text}>scroll down</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="projects">
-                    <p>Here are my projects</p>
-                    <p>Have a look</p>
-                    <Link href="/retrogram">
-                        <a>Retrogram</a>
-                    </Link>
-                    <Link href="/icoin">
-                        <a>Icoin</a>
-                    </Link>
-                </section>
-
-                <section className="contact">
-                    <h1>Come talk to me! I love to interact!</h1>
-                </section>
+            <main className={styles.scroll_parent}>
+                {/* <div className={styles.scroll_child}> */}
+                <div className={`${styles.scroll_wheel} ${styles.scroller}`}>
+                    <section className={`${styles.scroll_card} ${styles.welcome}`}>welcome
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptatibus nisi autem veritatis consequuntur vel ad tenetur incidunt atque est magni tempore aperiam, obcaecati quae ab deserunt ratione libero! Omnis doloremque debitis veniam culpa sapiente, aspernatur eius hic error magni voluptate, fuga neque iusto expedita! Explicabo odit et sint ipsum quidem omnis. Dolor fugiat cum atque? Vitae perferendis, nobis iusto excepturi iure quod, tempora ipsum, quam incidunt veniam totam nulla voluptate magni nihil! Rerum nisi sed corporis quae maxime perferendis recusandae, adipisci facere eos nostrum doloribus asperiores repellendus porro blanditiis provident. Odit dolores ipsum magnam ad provident nisi in enim.</p></section>
+                    <section className={`${styles.scroll_card} ${styles.about_only}`}>about only
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptatibus nisi autem veritatis consequuntur vel ad tenetur incidunt atque est magni tempore aperiam, obcaecati quae ab deserunt ratione libero! Omnis doloremque debitis veniam culpa sapiente, aspernatur eius hic error magni voluptate, fuga neque iusto expedita! Explicabo odit et sint ipsum quidem omnis. Dolor fugiat cum atque? Vitae perferendis, nobis iusto excepturi iure quod, tempora ipsum, quam incidunt veniam totam nulla voluptate magni nihil! Rerum nisi sed corporis quae maxime perferendis recusandae, adipisci facere eos nostrum doloribus asperiores repellendus porro blanditiis provident. Odit dolores ipsum magnam ad provident nisi in enim.</p></section>
+                    <section className={`${styles.scroll_card} ${styles.about_content}`}>about content
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptatibus nisi autem veritatis consequuntur vel ad tenetur incidunt atque est magni tempore aperiam, obcaecati quae ab deserunt ratione libero! Omnis doloremque debitis veniam culpa sapiente, aspernatur eius hic error magni voluptate, fuga neque iusto expedita! Explicabo odit et sint ipsum quidem omnis. Dolor fugiat cum atque? Vitae perferendis, nobis iusto excepturi iure quod, tempora ipsum, quam incidunt veniam totam nulla voluptate magni nihil! Rerum nisi sed corporis quae maxime perferendis recusandae, adipisci facere eos nostrum doloribus asperiores repellendus porro blanditiis provident. Odit dolores ipsum magnam ad provident nisi in enim.</p></section>
+                    <section className={`${styles.scroll_card} ${styles.project_only}`}>project only
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptatibus nisi autem veritatis consequuntur vel ad tenetur incidunt atque est magni tempore aperiam, obcaecati quae ab deserunt ratione libero! Omnis doloremque debitis veniam culpa sapiente, aspernatur eius hic error magni voluptate, fuga neque iusto expedita! Explicabo odit et sint ipsum quidem omnis. Dolor fugiat cum atque? Vitae perferendis, nobis iusto excepturi iure quod, tempora ipsum, quam incidunt veniam totam nulla voluptate magni nihil! Rerum nisi sed corporis quae maxime perferendis recusandae, adipisci facere eos nostrum doloribus asperiores repellendus porro blanditiis provident. Odit dolores ipsum magnam ad provident nisi in enim.</p></section>
+                    <section className={`${styles.scroll_card} ${styles.project_one}`}>project 1
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptatibus nisi autem veritatis consequuntur vel ad tenetur incidunt atque est magni tempore aperiam, obcaecati quae ab deserunt ratione libero! Omnis doloremque debitis veniam culpa sapiente, aspernatur eius hic error magni voluptate, fuga neque iusto expedita! Explicabo odit et sint ipsum quidem omnis. Dolor fugiat cum atque? Vitae perferendis, nobis iusto excepturi iure quod, tempora ipsum, quam incidunt veniam totam nulla voluptate magni nihil! Rerum nisi sed corporis quae maxime perferendis recusandae, adipisci facere eos nostrum doloribus asperiores repellendus porro blanditiis provident. Odit dolores ipsum magnam ad provident nisi in enim.</p></section>
+                    <section className={`${styles.scroll_card} ${styles.project_two}`}>project 2
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptatibus nisi autem veritatis consequuntur vel ad tenetur incidunt atque est magni tempore aperiam, obcaecati quae ab deserunt ratione libero! Omnis doloremque debitis veniam culpa sapiente, aspernatur eius hic error magni voluptate, fuga neque iusto expedita! Explicabo odit et sint ipsum quidem omnis. Dolor fugiat cum atque? Vitae perferendis, nobis iusto excepturi iure quod, tempora ipsum, quam incidunt veniam totam nulla voluptate magni nihil! Rerum nisi sed corporis quae maxime perferendis recusandae, adipisci facere eos nostrum doloribus asperiores repellendus porro blanditiis provident. Odit dolores ipsum magnam ad provident nisi in enim.</p></section>
+                    <section className={`${styles.scroll_card} ${styles.contact}`}>contact
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptatibus nisi autem veritatis consequuntur vel ad tenetur incidunt atque est magni tempore aperiam, obcaecati quae ab deserunt ratione libero! Omnis doloremque debitis veniam culpa sapiente, aspernatur eius hic error magni voluptate, fuga neque iusto expedita! Explicabo odit et sint ipsum quidem omnis. Dolor fugiat cum atque? Vitae perferendis, nobis iusto excepturi iure quod, tempora ipsum, quam incidunt veniam totam nulla voluptate magni nihil! Rerum nisi sed corporis quae maxime perferendis recusandae, adipisci facere eos nostrum doloribus asperiores repellendus porro blanditiis provident. Odit dolores ipsum magnam ad provident nisi in enim.</p></section>
+                </div>
+                {/* </div> */}
             </main>
         </div>
     )
