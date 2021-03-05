@@ -30,7 +30,6 @@
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: nowrap;
-  width: auto;
 }
 
 .scroll_card {
@@ -38,32 +37,87 @@
   width: 100vw;
   height: 100vh;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  mix-blend-mode: difference;
+  padding: 4rem 1rem 0;
 }
+
+/* welcome section styles */
+.welcome {
+  background-color: #fff;
+  color: #000;
+}
+
+.hero_container {
+  /* padding-top: 10rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first_line, .last_line {
+  display: flex;
+  align-items: flex-end;
+}
+
+.hello, .greeting, .my_space {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+.me {
+  margin-left: 2rem;
+  font-size: 10px;
+  width: 40%;
+}
+
+.stack {
+  margin-right: 1rem;
+  font-size: 10px;
+  width: 40%;
+}
+
+.see_more {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10rem;
+  text-align: right;
+}
+
+.see_more hr {
+  width: 10%;
+  height: 1px;
+  margin-left: .5rem;
+  display: inline-block;
+  text-align: center;
+}
+/* end of welcome section styles */
 
 .about_only {
   background-color: #000;
+  color: #fff;
 }
 
 .about_content {
   background-color: #fff;
+  color: #000;
 }
 
 .project_only {
   background-color: #000;
+  color: #fff;
 }
 
 .project_one {
   background-color: #fff;
+  color: #000;
 }
 
 .project_two {
   background-color: #000;
+  color: #fff;
 }
 
 .contact {
   background-color: #fff;
+  color: #000;
 }

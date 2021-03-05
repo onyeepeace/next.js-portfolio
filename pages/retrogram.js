@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout from '../components/layout'
-import styles from '../styles/Home.module.css'
+import Layout from '@/components/layout'
+import styles from '@/styles/Home.module.css'
 
 function Retrogram() {
     return (
